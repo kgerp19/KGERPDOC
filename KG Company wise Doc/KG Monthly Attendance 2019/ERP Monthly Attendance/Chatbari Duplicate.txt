@@ -1,0 +1,26 @@
+1001	1001	Ariful Islam                    Duplicate
+796	0796	Md. Atikullah Morol             Duplicate
+1002	1002	Md. Ali Hossen			Duplicate
+1003	1003	Salauddin			Duplicate
+1005	1005	Sujon				Duplicate
+1006	1006	Kaosar Ahmed			Duplicate
+1007	1007	Atabur Rahman			Duplicate
+1008	1008	Md. Abu Kawsar			Duplicate
+1009	1009	Abdul Mannan			Duplicate
+1010	1010	Khademul Islam			ID not Recognized
+1011	1011	Md. Moniruzzman			Duplicate
+1012	1012	Arif Hossain			ID not Recognized
+1013	1013	Md. Abdur Razzak		Duplicate
+1014	1014	Md. Sirajul Islam
+1057	1057	Shamsun Nahar
+
+
+ID Not Create
+6000	6000	Md. Ismail Hossain
+6001	6001	Md. Hafizur Rahman
+6002	6002	Md. Saminur Mia
+6003	6003	Sazzad Khan
+6004	6004	Md. Saifuddin
+6005	6005	Md. Tanjil Mia
+6006	6006	Md. Mukul Hossain
+6007	6007	Md. Akkas Ali

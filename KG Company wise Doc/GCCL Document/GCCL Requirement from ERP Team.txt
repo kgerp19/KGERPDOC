@@ -1,0 +1,6 @@
+1.Production note entry for daily basis
+2. CS 
+3. COGS for Raw materials and Finish Goods.
+4. Approval Authorization Level
+5. Request for Quotation (RFQ)
+6. CS reference number how to used in existing system 
