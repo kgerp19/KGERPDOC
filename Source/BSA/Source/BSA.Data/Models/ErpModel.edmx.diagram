@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10f2033a71934cbf9681dc89f6bf64d4" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="BSALiveModel.AdminSetUp" Width="1.5" PointX="8.125" PointY="2.25" />
+        <EntityTypeShape EntityType="BSALiveModel.Company" Width="1.5" PointX="11.25" PointY="1.875" />
+        <EntityTypeShape EntityType="BSALiveModel.Designation" Width="1.5" PointX="0.5" PointY="3.375" />
+        <EntityTypeShape EntityType="BSALiveModel.DropDownItem" Width="1.5" PointX="5.25" PointY="0.875" />
+        <EntityTypeShape EntityType="BSALiveModel.DropDownType" Width="1.5" PointX="5.875" PointY="6.625" />
+        <EntityTypeShape EntityType="BSALiveModel.Menu" Width="1.5" PointX="9.625" PointY="5.875" />
+        <EntityTypeShape EntityType="BSALiveModel.User" Width="1.5" PointX="0.625" PointY="0.625" />
+        <EntityTypeShape EntityType="BSALiveModel.UserMenu" Width="1.5" PointX="11.75" PointY="8.875" />
+        <AssociationConnector Association="BSALiveModel.FK_MainMenu_Company" />
+        <AssociationConnector Association="BSALiveModel.FK_DropDownItem_DropDownType" />
+        <AssociationConnector Association="BSALiveModel.FK_UserMenu_Menu" />
+        <EntityTypeShape EntityType="BSALiveModel.YearlyHoliday" Width="1.5" PointX="15.125" PointY="2.75" />
+        <EntityTypeShape EntityType="BSALiveModel.SubMenu" Width="1.5" PointX="7.75" PointY="9.75" />
+        <AssociationConnector Association="BSALiveModel.FK_SubMenu_Menu" />
+        <AssociationConnector Association="BSALiveModel.FK_UserMenu_SubMenu" />
+        <EntityTypeShape EntityType="BSALiveModel.Employee" Width="1.5" PointX="13.75" PointY="5.5" />
+        <EntityTypeShape EntityType="BSALiveModel.Customer" Width="1.5" PointX="2.625" PointY="0.625" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
