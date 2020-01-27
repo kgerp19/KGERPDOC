@@ -1,0 +1,56 @@
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\KGERP.Utility.dll.config
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\KGERP.Utility.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\KGERP.Utility.pdb
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\AutoMapper.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Net.Http.Extensions.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Net.Http.Formatting.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Net.Http.Primitives.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Helpers.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Mvc.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Razor.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\Newtonsoft.Json.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\AutoMapper.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Helpers.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Razor.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csproj.CoreCompileInputs.cache
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csproj.CopyComplete
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\obj\Debug\KGERP.Utility.dll
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\obj\Debug\KGERP.Utility.pdb
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\bin\Debug\System.Web.Mvc.xml
+D:\Project\Live 27_10_2019\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csprojAssemblyReference.cache
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\KGERP.Utility.dll.config
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\KGERP.Utility.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\KGERP.Utility.pdb
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\AutoMapper.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Net.Http.Extensions.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Net.Http.Formatting.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Net.Http.Primitives.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Helpers.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Mvc.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Razor.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\Newtonsoft.Json.dll
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\AutoMapper.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Helpers.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Mvc.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.Razor.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\PIAB\Source\KGERP.Utility\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\PIAB\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csprojAssemblyReference.cache
+D:\Project\PIAB\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csproj.CoreCompileInputs.cache
+D:\Project\PIAB\Source\KGERP.Utility\obj\Debug\KGERP.Utility.csproj.CopyComplete
+D:\Project\PIAB\Source\KGERP.Utility\obj\Debug\KGERP.Utility.dll
+D:\Project\PIAB\Source\KGERP.Utility\obj\Debug\KGERP.Utility.pdb

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PIAB.Report", "PIAB.Report\PIAB.Report.rptproj", "{A4B79F88-91A2-486E-ADFB-DA0C15234513}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Debug|Default.ActiveCfg = Debug
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Debug|Default.Build.0 = Debug
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Debug|Default.Deploy.0 = Debug
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.DebugLocal|Default.Build.0 = DebugLocal
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Release|Default.ActiveCfg = Release
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Release|Default.Build.0 = Release
+		{A4B79F88-91A2-486E-ADFB-DA0C15234513}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECC3D007-914D-4921-BEAA-0045E51C82F4}
+	EndGlobalSection
+EndGlobal

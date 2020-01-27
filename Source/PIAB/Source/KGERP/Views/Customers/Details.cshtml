@@ -1,0 +1,258 @@
+﻿@model KGERP.Data.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Customer Details</h2>
+<hr style="border-color:red; padding:0px;margin-top: 10px;margin-bottom: 20px; border-width: 2px;" />
+
+@*<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressOne)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.AddressOne)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPersonName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactPersonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MobileNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DuePayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuePayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastPaymentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NIDorBIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIDorBIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Remarks)
+        </dt>
+    </dl>
+</div>*@
+
+<div class="panel panel-info" id="pnlCaseBasicInfo">
+    <div class="panel-heading"><b>  Self Company Information </b></div>
+    <div class="panel-body">
+        <table class="spacing-table">
+            <tr>
+                <td style="width: 20%" align="right">
+                    @Html.DisplayNameFor(model => model.CustomerId)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle;">
+                    @Html.DisplayFor(model => model.CustomerId)
+                </td>
+                <td style="width: 20%" align="right">
+                    @Html.DisplayNameFor(model => model.MemberName)
+                </td>
+                <td colspan="3" style="background-color: #E9EDBE; vertical-align: middle;">
+                    @Html.DisplayFor(model => model.MemberName)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.CustomerType)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.CustomerType)
+                </td>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.AddressOne)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.AddressOne)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.ContactPersonName)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.ContactPersonName)
+                </td>
+
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.MobileNo)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.MobileNo)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.Website)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.Website)
+                </td>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.PaymentStatus)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.PaymentStatus)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.Telephone)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.Telephone)
+                </td>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.Email)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.DateOfRegistration)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.DateOfRegistration)
+                </td>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.DuePayment)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.DuePayment)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.ContactPersonName)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.ContactPersonName)
+                </td>
+                <td align="right">
+                    @Html.DisplayNameFor(model => model.MobileNo)
+                </td>
+                <td style="background-color: #E9EDBE; vertical-align: middle !important;">
+                    @Html.DisplayFor(model => model.MobileNo)
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+ 
+<p>
+    @*@Html.ActionLink("Edit", "Create", new { id = Model.OID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<style type="text/css">
+    .text-on-pannel {
+        background: #fff none repeat scroll 0 0;
+        height: auto;
+        margin-left: 20px;
+        padding: 3px 5px;
+        position: absolute;
+        margin-top: -47px;
+        border: 1px solid #337ab7;
+        border-radius: 8px;
+    }
+
+    .panel {
+        /* for text on pannel */
+        margin-top: 27px !important;
+    }
+
+    .panel-body {
+        padding-top: 30px !important;
+    }
+
+    .spacing-table {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-size: 12px;
+        border-collapse: separate;
+        border-spacing: 0 5px; /* this is the ultimate fix */
+        width: 100%;
+    }
+
+        .spacing-table th {
+            text-align: left;
+            padding: 5px 5px;
+        }
+
+        .spacing-table td {
+            border-width: 3px 0;
+            /* border-color: darkred;
+                border-style: solid;*/
+            background-color: #f1f1f1;
+            color: Black;
+            padding: 5px 5px;
+        }
+
+            .spacing-table td:first-child {
+                /*  border-left-width: 3px;*/
+                border-radius: 5px 0 0 5px;
+            }
+
+            .spacing-table td:last-child {
+                /*border-right-width: 3px;*/
+                border-radius: 0 5px 5px 0;
+            }
+</style>

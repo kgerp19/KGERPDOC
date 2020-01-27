@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KGERPLiveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ERPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminSetUps" EntityType="KGERPLiveModel.AdminSetUp" />
+    <EntitySet Name="Banks" EntityType="KGERPLiveModel.Bank" />
+    <EntitySet Name="BankBranches" EntityType="KGERPLiveModel.BankBranch" />
+    <EntitySet Name="CommercialZones" EntityType="KGERPLiveModel.CommercialZone" />
+    <EntitySet Name="Companies" EntityType="KGERPLiveModel.Company" />
+    <EntitySet Name="Countries" EntityType="KGERPLiveModel.Country" />
+    <EntitySet Name="Customers" EntityType="KGERPLiveModel.Customer" />
+    <EntitySet Name="Designations" EntityType="KGERPLiveModel.Designation" />
+    <EntitySet Name="Districts" EntityType="KGERPLiveModel.District" />
+    <EntitySet Name="Divisions" EntityType="KGERPLiveModel.Division" />
+    <EntitySet Name="DropDownItems" EntityType="KGERPLiveModel.DropDownItem" />
+    <EntitySet Name="DropDownTypes" EntityType="KGERPLiveModel.DropDownType" />
+    <EntitySet Name="Educations" EntityType="KGERPLiveModel.Education" />
+    <EntitySet Name="LeaveCategories" EntityType="KGERPLiveModel.LeaveCategory" />
+    <EntitySet Name="Members" EntityType="KGERPLiveModel.Member" />
+    <EntitySet Name="Menus" EntityType="KGERPLiveModel.Menu" />
+    <EntitySet Name="SubMenus" EntityType="KGERPLiveModel.SubMenu" />
+    <EntitySet Name="Users" EntityType="KGERPLiveModel.User" />
+    <EntitySet Name="UserMenus" EntityType="KGERPLiveModel.UserMenu" />
+    <EntitySet Name="Upazilas" EntityType="KGERPLiveModel.Upazila" />
+    <AssociationSet Name="FK_BankBranch_Bank" Association="KGERPLiveModel.FK_BankBranch_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="BankBranch" EntitySet="BankBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommercialZone_Division" Association="KGERPLiveModel.FK_CommercialZone_Division">
+      <End Role="Division" EntitySet="Divisions" />
+      <End Role="CommercialZone" EntitySet="CommercialZones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MainMenu_Company" Association="KGERPLiveModel.FK_MainMenu_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thana_District" Association="KGERPLiveModel.FK_Thana_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="Upazila" EntitySet="Upazilas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DropDownItem_DropDownType" Association="KGERPLiveModel.FK_DropDownItem_DropDownType">
+      <End Role="DropDownType" EntitySet="DropDownTypes" />
+      <End Role="DropDownItem" EntitySet="DropDownItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Education_Examination" Association="KGERPLiveModel.FK_Education_Examination">
+      <End Role="DropDownItem" EntitySet="DropDownItems" />
+      <End Role="Education" EntitySet="Educations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubMenu_Menu" Association="KGERPLiveModel.FK_SubMenu_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="SubMenu" EntitySet="SubMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMenu_Menu" Association="KGERPLiveModel.FK_UserMenu_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="UserMenu" EntitySet="UserMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMenu_SubMenu" Association="KGERPLiveModel.FK_UserMenu_SubMenu">
+      <End Role="SubMenu" EntitySet="SubMenus" />
+      <End Role="UserMenu" EntitySet="UserMenus" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdminSetUp">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="CreatededBy" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="BankBranches" Relationship="KGERPLiveModel.FK_BankBranch_Bank" FromRole="Bank" ToRole="BankBranch" />
+  </EntityType>
+  <EntityType Name="BankBranch">
+    <Key>
+      <PropertyRef Name="BankBranchId" />
+    </Key>
+    <Property Name="BankBranchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankId" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Bank" Relationship="KGERPLiveModel.FK_BankBranch_Bank" FromRole="BankBranch" ToRole="Bank" />
+  </EntityType>
+  <EntityType Name="CommercialZone">
+    <Key>
+      <PropertyRef Name="CommercialZoneId" />
+    </Key>
+    <Property Name="CommercialZoneId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="Int64" />
+    <NavigationProperty Name="Division" Relationship="KGERPLiveModel.FK_CommercialZone_Division" FromRole="CommercialZone" ToRole="Division" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyType" Type="Int32" />
+    <Property Name="MushokNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Menus" Relationship="KGERPLiveModel.FK_MainMenu_Company" FromRole="Company" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ISOCountryCodes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="Double" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="AddressOne" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NIDorBIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfRegistration" Type="DateTime" Precision="0" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ConcatPersonEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddressTwo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastPaymentDate" Type="DateTime" Precision="0" />
+    <Property Name="DuePayment" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OverDueAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Designation">
+    <Key>
+      <PropertyRef Name="DesignationId" />
+    </Key>
+    <Property Name="DesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DivisionId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Upazilas" Relationship="KGERPLiveModel.FK_Thana_District" FromRole="District" ToRole="Upazila" />
+  </EntityType>
+  <EntityType Name="Division">
+    <Key>
+      <PropertyRef Name="DivisionId" />
+    </Key>
+    <Property Name="DivisionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GOVTDivisionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CommercialZones" Relationship="KGERPLiveModel.FK_CommercialZone_Division" FromRole="Division" ToRole="CommercialZone" />
+  </EntityType>
+  <EntityType Name="DropDownItem">
+    <Key>
+      <PropertyRef Name="DropDownItemId" />
+    </Key>
+    <Property Name="DropDownItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DropDownTypeId" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DropDownType" Relationship="KGERPLiveModel.FK_DropDownItem_DropDownType" FromRole="DropDownItem" ToRole="DropDownType" />
+    <NavigationProperty Name="Educations" Relationship="KGERPLiveModel.FK_Education_Examination" FromRole="DropDownItem" ToRole="Education" />
+  </EntityType>
+  <EntityType Name="DropDownType">
+    <Key>
+      <PropertyRef Name="DropDownTypeId" />
+    </Key>
+    <Property Name="DropDownTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DropDownItems" Relationship="KGERPLiveModel.FK_DropDownItem_DropDownType" FromRole="DropDownType" ToRole="DropDownItem" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int64" />
+    <Property Name="EmployeeId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Examination" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ExaminationId" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Institute" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PassingYear" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RollNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RegNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Result" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DropDownItem" Relationship="KGERPLiveModel.FK_Education_Examination" FromRole="Education" ToRole="DropDownItem" />
+  </EntityType>
+  <EntityType Name="LeaveCategory">
+    <Key>
+      <PropertyRef Name="LeaveCategoryId" />
+    </Key>
+    <Property Name="LeaveCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GradeId" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MaxDays" Type="Int32" />
+    <Property Name="PostFlag" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberName" Type="String" MaxLength="220" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConcatPersonEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LogoUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfRegistration" Type="DateTime" Precision="0" />
+    <Property Name="CorporateOffice" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="TradeLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyChairman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyMD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PBX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OfficeEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BankId" Type="Int32" />
+    <Property Name="BankBranchId" Type="Int32" />
+    <Property Name="BankBranch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BankAccount" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LicenseNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PassportNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NationalId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TinorBin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="KGERPLiveModel.FK_MainMenu_Company" FromRole="Menu" ToRole="Company" />
+    <NavigationProperty Name="SubMenus" Relationship="KGERPLiveModel.FK_SubMenu_Menu" FromRole="Menu" ToRole="SubMenu" />
+    <NavigationProperty Name="UserMenus" Relationship="KGERPLiveModel.FK_UserMenu_Menu" FromRole="Menu" ToRole="UserMenu" />
+  </EntityType>
+  <EntityType Name="SubMenu">
+    <Key>
+      <PropertyRef Name="SubMenuId" />
+    </Key>
+    <Property Name="SubMenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="Int32" Nullable="false" />
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Controller" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Action" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Param" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Menu" Relationship="KGERPLiveModel.FK_SubMenu_Menu" FromRole="SubMenu" ToRole="Menu" />
+    <NavigationProperty Name="UserMenus" Relationship="KGERPLiveModel.FK_UserMenu_SubMenu" FromRole="SubMenu" ToRole="UserMenu" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsEmailVerified" Type="Boolean" Nullable="false" />
+    <Property Name="ActivationCode" Type="Guid" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserMenu">
+    <Key>
+      <PropertyRef Name="UserMenuId" />
+    </Key>
+    <Property Name="UserMenuId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="SubMenuId" Type="Int32" Nullable="false" />
+    <Property Name="IsView" Type="Boolean" Nullable="false" />
+    <Property Name="IsAdd" Type="Boolean" Nullable="false" />
+    <Property Name="IsUpdate" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Menu" Relationship="KGERPLiveModel.FK_UserMenu_Menu" FromRole="UserMenu" ToRole="Menu" />
+    <NavigationProperty Name="SubMenu" Relationship="KGERPLiveModel.FK_UserMenu_SubMenu" FromRole="UserMenu" ToRole="SubMenu" />
+  </EntityType>
+  <EntityType Name="Upazila">
+    <Key>
+      <PropertyRef Name="UpazilaId" />
+    </Key>
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="UpazilaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CarryingRate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="District" Relationship="KGERPLiveModel.FK_Thana_District" FromRole="Upazila" ToRole="District" />
+  </EntityType>
+  <Association Name="FK_BankBranch_Bank">
+    <End Type="KGERPLiveModel.Bank" Role="Bank" Multiplicity="0..1" />
+    <End Type="KGERPLiveModel.BankBranch" Role="BankBranch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="BankBranch">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommercialZone_Division">
+    <End Type="KGERPLiveModel.Division" Role="Division" Multiplicity="0..1" />
+    <End Type="KGERPLiveModel.CommercialZone" Role="CommercialZone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Division">
+        <PropertyRef Name="DivisionId" />
+      </Principal>
+      <Dependent Role="CommercialZone">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MainMenu_Company">
+    <End Type="KGERPLiveModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="KGERPLiveModel.Menu" Role="Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thana_District">
+    <End Type="KGERPLiveModel.District" Role="District" Multiplicity="0..1" />
+    <End Type="KGERPLiveModel.Upazila" Role="Upazila" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="DistrictId" />
+      </Principal>
+      <Dependent Role="Upazila">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DropDownItem_DropDownType">
+    <End Type="KGERPLiveModel.DropDownType" Role="DropDownType" Multiplicity="0..1" />
+    <End Type="KGERPLiveModel.DropDownItem" Role="DropDownItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DropDownType">
+        <PropertyRef Name="DropDownTypeId" />
+      </Principal>
+      <Dependent Role="DropDownItem">
+        <PropertyRef Name="DropDownTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Education_Examination">
+    <End Type="KGERPLiveModel.DropDownItem" Role="DropDownItem" Multiplicity="0..1" />
+    <End Type="KGERPLiveModel.Education" Role="Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DropDownItem">
+        <PropertyRef Name="DropDownItemId" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="ExaminationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubMenu_Menu">
+    <End Type="KGERPLiveModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="KGERPLiveModel.SubMenu" Role="SubMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="MenuId" />
+      </Principal>
+      <Dependent Role="SubMenu">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMenu_Menu">
+    <End Type="KGERPLiveModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="KGERPLiveModel.UserMenu" Role="UserMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="MenuId" />
+      </Principal>
+      <Dependent Role="UserMenu">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMenu_SubMenu">
+    <End Type="KGERPLiveModel.SubMenu" Role="SubMenu" Multiplicity="1" />
+    <End Type="KGERPLiveModel.UserMenu" Role="UserMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubMenu">
+        <PropertyRef Name="SubMenuId" />
+      </Principal>
+      <Dependent Role="UserMenu">
+        <PropertyRef Name="SubMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
